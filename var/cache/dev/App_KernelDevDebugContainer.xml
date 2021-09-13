@@ -350,6 +350,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\OptionAbonnementRepository" class="App\Repository\OptionAbonnementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4398,7 +4402,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.W2JFkTW"/>
+      <argument type="service" id=".service_locator.se_ij16"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5525,6 +5529,8 @@
     <service id=".abstract.instanceof.App\Repository\ConceptRepository" class="App\Repository\ConceptRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContratAbonnementRepository" class="App\Repository\ContratAbonnementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContratAbonnementRepository" class="App\Repository\ContratAbonnementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OptionAbonnementRepository" class="App\Repository\OptionAbonnementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\OptionAbonnementRepository" class="App\Repository\OptionAbonnementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TypeAbonnementRepository" class="App\Repository\TypeAbonnementRepository" autowire="true" abstract="true"/>
@@ -6110,7 +6116,7 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.W2JFkTW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.se_ij16" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
@@ -6118,6 +6124,7 @@
         <argument key="App\Repository\CoachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
         <argument key="App\Repository\ConceptRepository" type="service_closure" id="App\Repository\ConceptRepository"/>
         <argument key="App\Repository\ContratAbonnementRepository" type="service_closure" id="App\Repository\ContratAbonnementRepository"/>
+        <argument key="App\Repository\OptionAbonnementRepository" type="service_closure" id="App\Repository\OptionAbonnementRepository"/>
         <argument key="App\Repository\SalleRepository" type="service_closure" id="App\Repository\SalleRepository"/>
         <argument key="App\Repository\TypeAbonnementRepository" type="service_closure" id="App\Repository\TypeAbonnementRepository"/>
       </argument>
