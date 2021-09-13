@@ -330,6 +330,34 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ArticleWebRepository" class="App\Repository\ArticleWebRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ConceptRepository" class="App\Repository\ConceptRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ContratAbonnementRepository" class="App\Repository\ContratAbonnementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TypeAbonnementRepository" class="App\Repository\TypeAbonnementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -4370,7 +4398,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.Xbsa8iG"/>
+      <argument type="service" id=".service_locator.W2JFkTW"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5487,6 +5515,20 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleWebRepository" class="App\Repository\ArticleWebRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ArticleWebRepository" class="App\Repository\ArticleWebRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ConceptRepository" class="App\Repository\ConceptRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ConceptRepository" class="App\Repository\ConceptRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContratAbonnementRepository" class="App\Repository\ContratAbonnementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContratAbonnementRepository" class="App\Repository\ContratAbonnementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SalleRepository" class="App\Repository\SalleRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TypeAbonnementRepository" class="App\Repository\TypeAbonnementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TypeAbonnementRepository" class="App\Repository\TypeAbonnementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.0GV1BZZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6068,9 +6110,17 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.Xbsa8iG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.W2JFkTW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+        <argument key="App\Repository\ArticleWebRepository" type="service_closure" id="App\Repository\ArticleWebRepository"/>
+        <argument key="App\Repository\CoachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+        <argument key="App\Repository\ConceptRepository" type="service_closure" id="App\Repository\ConceptRepository"/>
+        <argument key="App\Repository\ContratAbonnementRepository" type="service_closure" id="App\Repository\ContratAbonnementRepository"/>
+        <argument key="App\Repository\SalleRepository" type="service_closure" id="App\Repository\SalleRepository"/>
+        <argument key="App\Repository\TypeAbonnementRepository" type="service_closure" id="App\Repository\TypeAbonnementRepository"/>
+      </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
