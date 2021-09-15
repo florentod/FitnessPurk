@@ -24,6 +24,16 @@ class Activite
      */
     private $salles;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomActivite;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $articleActivite;
+
     public function __construct()
     {
         $this->salles = new ArrayCollection();
@@ -54,6 +64,30 @@ class Activite
     public function removeSalle(Salle $salle): self
     {
         $this->salles->removeElement($salle);
+
+        return $this;
+    }
+
+    public function getNomActivite(): ?string
+    {
+        return $this->nomActivite;
+    }
+
+    public function setNomActivite(string $nomActivite): self
+    {
+        $this->nomActivite = $nomActivite;
+
+        return $this;
+    }
+
+    public function getArticleActivite(): ?string
+    {
+        return $this->articleActivite;
+    }
+
+    public function setArticleActivite(?string $articleActivite): self
+    {
+        $this->articleActivite = $articleActivite;
 
         return $this;
     }

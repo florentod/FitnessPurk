@@ -29,6 +29,36 @@ class Coach
      */
     private $contratAbonnements;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomCoach;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prenomCoach;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $clubCoach;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photoCoach;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $telCoach;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $discipline;
+
     public function __construct()
     {
         $this->salles = new ArrayCollection();
@@ -90,6 +120,78 @@ class Coach
         if ($this->contratAbonnements->removeElement($contratAbonnement)) {
             $contratAbonnement->removeCoach($this);
         }
+
+        return $this;
+    }
+
+    public function getNomCoach(): ?string
+    {
+        return $this->nomCoach;
+    }
+
+    public function setNomCoach(string $nomCoach): self
+    {
+        $this->nomCoach = $nomCoach;
+
+        return $this;
+    }
+
+    public function getPrenomCoach(): ?string
+    {
+        return $this->prenomCoach;
+    }
+
+    public function setPrenomCoach(string $prenomCoach): self
+    {
+        $this->prenomCoach = $prenomCoach;
+
+        return $this;
+    }
+
+    public function getClubCoach(): ?string
+    {
+        return $this->clubCoach;
+    }
+
+    public function setClubCoach(string $clubCoach): self
+    {
+        $this->clubCoach = $clubCoach;
+
+        return $this;
+    }
+
+    public function getPhotoCoach(): ?string
+    {
+        return $this->photoCoach;
+    }
+
+    public function setPhotoCoach(?string $photoCoach): self
+    {
+        $this->photoCoach = $photoCoach;
+
+        return $this;
+    }
+
+    public function getTelCoach(): ?int
+    {
+        return $this->telCoach;
+    }
+
+    public function setTelCoach(int $telCoach): self
+    {
+        $this->telCoach = $telCoach;
+
+        return $this;
+    }
+
+    public function getDiscipline(): ?string
+    {
+        return $this->discipline;
+    }
+
+    public function setDiscipline(?string $discipline): self
+    {
+        $this->discipline = $discipline;
 
         return $this;
     }

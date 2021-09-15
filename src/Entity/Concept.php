@@ -24,6 +24,16 @@ class Concept
      */
     private $salle;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomConcept;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $article;
+
     public function __construct()
     {
         $this->salle = new ArrayCollection();
@@ -54,6 +64,30 @@ class Concept
     public function removeSalle(Salle $salle): self
     {
         $this->salle->removeElement($salle);
+
+        return $this;
+    }
+
+    public function getNomConcept(): ?string
+    {
+        return $this->nomConcept;
+    }
+
+    public function setNomConcept(string $nomConcept): self
+    {
+        $this->nomConcept = $nomConcept;
+
+        return $this;
+    }
+
+    public function getArticle(): ?string
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?string $article): self
+    {
+        $this->article = $article;
 
         return $this;
     }

@@ -24,6 +24,16 @@ class ArticleWeb
      */
     private $salles;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomArticle;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $theme;
+
     public function __construct()
     {
         $this->salles = new ArrayCollection();
@@ -54,6 +64,30 @@ class ArticleWeb
     public function removeSalle(Salle $salle): self
     {
         $this->salles->removeElement($salle);
+
+        return $this;
+    }
+
+    public function getNomArticle(): ?string
+    {
+        return $this->nomArticle;
+    }
+
+    public function setNomArticle(string $nomArticle): self
+    {
+        $this->nomArticle = $nomArticle;
+
+        return $this;
+    }
+
+    public function getTheme(): ?string
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(?string $theme): self
+    {
+        $this->theme = $theme;
 
         return $this;
     }
