@@ -39,6 +39,11 @@ class ContratAbonnement
      */
     private $optionAbonnements;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $validationInscription;
+
     public function __construct()
     {
         $this->coachs = new ArrayCollection();
@@ -118,6 +123,18 @@ class ContratAbonnement
     public function removeOptionAbonnement(OptionAbonnement $optionAbonnement): self
     {
         $this->optionAbonnements->removeElement($optionAbonnement);
+
+        return $this;
+    }
+
+    public function getValidationInscription(): ?bool
+    {
+        return $this->validationInscription;
+    }
+
+    public function setValidationInscription(bool $validationInscription): self
+    {
+        $this->validationInscription = $validationInscription;
 
         return $this;
     }

@@ -24,6 +24,31 @@ class TypeAbonnement
      */
     private $contratAbonnements;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $nomAbonnement;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $prixPremMois;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $prix;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $fraisInscription;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $engagemennt;
+
     public function __construct()
     {
         $this->contratAbonnements = new ArrayCollection();
@@ -60,6 +85,66 @@ class TypeAbonnement
                 $contratAbonnement->setTypeAbonnnements(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNomAbonnement(): ?string
+    {
+        return $this->nomAbonnement;
+    }
+
+    public function setNomAbonnement(?string $nomAbonnement): self
+    {
+        $this->nomAbonnement = $nomAbonnement;
+
+        return $this;
+    }
+
+    public function getPrixPremMois(): ?int
+    {
+        return $this->prixPremMois;
+    }
+
+    public function setPrixPremMois(?int $prixPremMois): self
+    {
+        $this->prixPremMois = $prixPremMois;
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(?int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getFraisInscription(): ?int
+    {
+        return $this->fraisInscription;
+    }
+
+    public function setFraisInscription(?int $fraisInscription): self
+    {
+        $this->fraisInscription = $fraisInscription;
+
+        return $this;
+    }
+
+    public function getEngagemennt(): ?string
+    {
+        return $this->engagemennt;
+    }
+
+    public function setEngagemennt(?string $engagemennt): self
+    {
+        $this->engagemennt = $engagemennt;
 
         return $this;
     }
