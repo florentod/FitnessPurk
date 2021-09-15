@@ -44,6 +44,11 @@ class ContratAbonnement
      */
     private $validationInscription;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="contratAbonnements")
+     */
+    private $users;
+
     public function __construct()
     {
         $this->coachs = new ArrayCollection();
@@ -135,6 +140,18 @@ class ContratAbonnement
     public function setValidationInscription(bool $validationInscription): self
     {
         $this->validationInscription = $validationInscription;
+
+        return $this;
+    }
+
+    public function getUsers(): ?User
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?User $users): self
+    {
+        $this->users = $users;
 
         return $this;
     }

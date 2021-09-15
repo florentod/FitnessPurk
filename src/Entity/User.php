@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -92,6 +94,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $photo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ContratAbonnement::class, mappedBy="users")
+     */
+    private $contratAbonnements;
+
+    public function __construct()
+    {
+        $this->contratAbonnements = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -310,6 +322,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContratAbonnement[]
+     */
+    public function getContratAbonnements(): Collection
+    {
+        return $this->contratAbonnements;
+    }
+
+    public function addContratAbonnement(ContratAbonnement $contratAbonnement): self
+    {
+        if (!$this->contratAbonnements->contains($contratAbonnement)) {
+            $this->contratAbonnements[] = $contratAbonnement;
+            $contratAbonnement->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContratAbonnement(ContratAbonnement $contratAbonnement): self
+    {
+        if ($this->contratAbonnements->removeElement($contratAbonnement)) {
+            // set the owning side to null (unless already changed)
+            if ($contratAbonnement->getUsers() === $this) {
+                $contratAbonnement->setUsers(null);
+            }
+        }
 
         return $this;
     }
