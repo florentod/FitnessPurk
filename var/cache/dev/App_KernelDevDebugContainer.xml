@@ -330,11 +330,60 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\ActiviteController" class="App\Controller\ActiviteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ActiviteController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ArticleWebController" class="App\Controller\ArticleWebController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ArticleWebController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CoachController" class="App\Controller\CoachController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\CoachController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ConceptController" class="App\Controller\ConceptController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ConceptController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ContratAbonnementController" class="App\Controller\ContratAbonnementController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ContratAbonnementController"/>
+      </call>
+    </service>
+    <service id="App\Controller\OptionAbonnementController" class="App\Controller\OptionAbonnementController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\OptionAbonnementController"/>
+      </call>
+    </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\RegistrationController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SalleController" class="App\Controller\SalleController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\SalleController"/>
       </call>
     </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
@@ -344,7 +393,48 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\TypeAbonnementController" class="App\Controller\TypeAbonnementController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\TypeAbonnementController"/>
+      </call>
+    </service>
+    <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\UserController"/>
+      </call>
+    </service>
+    <service id="App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ArticleWebType" class="App\Form\ArticleWebType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CoachType" class="App\Form\CoachType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ConceptType" class="App\Form\ConceptType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ContratAbonnementType" class="App\Form\ContratAbonnementType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\OptionAbonnementType" class="App\Form\OptionAbonnementType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SalleType" class="App\Form\SalleType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TypeAbonnementType" class="App\Form\TypeAbonnementType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true">
@@ -963,7 +1053,16 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ActiviteType</argument>
+        <argument>App\Form\ArticleWebType</argument>
+        <argument>App\Form\CoachType</argument>
+        <argument>App\Form\ConceptType</argument>
+        <argument>App\Form\ContratAbonnementType</argument>
+        <argument>App\Form\OptionAbonnementType</argument>
         <argument>App\Form\RegistrationFormType</argument>
+        <argument>App\Form\SalleType</argument>
+        <argument>App\Form\TypeAbonnementType</argument>
+        <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1369,7 +1468,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.yj07qm_"/>
+      <argument type="service" id=".service_locator.YZlPrJT"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5622,14 +5721,59 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleWebController" class="App\Controller\ArticleWebController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleWebController" class="App\Controller\ArticleWebController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ArticleWebController" class="App\Controller\ArticleWebController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ConceptController" class="App\Controller\ConceptController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ConceptController" class="App\Controller\ConceptController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ConceptController" class="App\Controller\ConceptController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContratAbonnementController" class="App\Controller\ContratAbonnementController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContratAbonnementController" class="App\Controller\ContratAbonnementController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContratAbonnementController" class="App\Controller\ContratAbonnementController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OptionAbonnementController" class="App\Controller\OptionAbonnementController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OptionAbonnementController" class="App\Controller\OptionAbonnementController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\OptionAbonnementController" class="App\Controller\OptionAbonnementController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SalleController" class="App\Controller\SalleController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SalleController" class="App\Controller\SalleController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SalleController" class="App\Controller\SalleController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TypeAbonnementController" class="App\Controller\TypeAbonnementController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TypeAbonnementController" class="App\Controller\TypeAbonnementController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TypeAbonnementController" class="App\Controller\TypeAbonnementController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ActiviteType" class="App\Form\ActiviteType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ArticleWebType" class="App\Form\ArticleWebType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ArticleWebType" class="App\Form\ArticleWebType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CoachType" class="App\Form\CoachType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CoachType" class="App\Form\CoachType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ConceptType" class="App\Form\ConceptType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ConceptType" class="App\Form\ConceptType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContratAbonnementType" class="App\Form\ContratAbonnementType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ContratAbonnementType" class="App\Form\ContratAbonnementType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OptionAbonnementType" class="App\Form\OptionAbonnementType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\OptionAbonnementType" class="App\Form\OptionAbonnementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SalleType" class="App\Form\SalleType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SalleType" class="App\Form\SalleType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TypeAbonnementType" class="App\Form\TypeAbonnementType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TypeAbonnementType" class="App\Form\TypeAbonnementType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleWebRepository" class="App\Repository\ArticleWebRepository" autowire="true" abstract="true"/>
@@ -5963,10 +6107,94 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.ieSzeIT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Hcjj_Ve" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="activite" type="service_closure" id=".errored..service_locator.Hcjj_Ve.App\Entity\Activite"/>
+      </argument>
+    </service>
+    <service id=".service_locator..aKg8d3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="articleWebRepository" type="service_closure" id="App\Repository\ArticleWebRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.FfCFYTE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="articleWeb" type="service_closure" id=".errored..service_locator.FfCFYTE.App\Entity\ArticleWeb"/>
+      </argument>
+    </service>
+    <service id=".service_locator.xrxb5fQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ci3a_Hu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coach" type="service_closure" id=".errored..service_locator.ci3a_Hu.App\Entity\Coach"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mNtrznK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="conceptRepository" type="service_closure" id="App\Repository\ConceptRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.y80EHXf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="concept" type="service_closure" id=".errored..service_locator.y80EHXf.App\Entity\Concept"/>
+      </argument>
+    </service>
+    <service id=".service_locator.8eXzxEn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="contratAbonnementRepository" type="service_closure" id="App\Repository\ContratAbonnementRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.YtRgIux" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="contratAbonnement" type="service_closure" id=".errored..service_locator.YtRgIux.App\Entity\ContratAbonnement"/>
+      </argument>
+    </service>
+    <service id=".service_locator.yvzUGnK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="optionAbonnementRepository" type="service_closure" id="App\Repository\OptionAbonnementRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.iX8bsHt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="optionAbonnement" type="service_closure" id=".errored..service_locator.iX8bsHt.App\Entity\OptionAbonnement"/>
+      </argument>
+    </service>
     <service id=".service_locator.pwZ6MTM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service_closure" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9OSv7pt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="salleRepository" type="service_closure" id="App\Repository\SalleRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.IjPBIR4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="salle" type="service_closure" id=".errored..service_locator.IjPBIR4.App\Entity\Salle"/>
       </argument>
     </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5975,19 +6203,115 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.glbFuN." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.u1LsvD." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="typeAbonnementRepository" type="service_closure" id="App\Repository\TypeAbonnementRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.PpBxCLD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="typeAbonnement" type="service_closure" id=".errored..service_locator.PpBxCLD.App\Entity\TypeAbonnement"/>
+      </argument>
+    </service>
+    <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ch4Jgvl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.XKPmtnW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\ActiviteController::delete" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ActiviteController::edit" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ActiviteController::index" type="service_closure" id=".service_locator.ieSzeIT"/>
+        <argument key="App\Controller\ActiviteController::show" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ArticleWebController::delete" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\ArticleWebController::edit" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\ArticleWebController::index" type="service_closure" id=".service_locator..aKg8d3"/>
+        <argument key="App\Controller\ArticleWebController::show" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\CoachController::delete" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\CoachController::edit" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\CoachController::index" type="service_closure" id=".service_locator.xrxb5fQ"/>
+        <argument key="App\Controller\CoachController::show" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\ConceptController::delete" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ConceptController::edit" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ConceptController::index" type="service_closure" id=".service_locator.mNtrznK"/>
+        <argument key="App\Controller\ConceptController::show" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ContratAbonnementController::delete" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\ContratAbonnementController::edit" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\ContratAbonnementController::index" type="service_closure" id=".service_locator.8eXzxEn"/>
+        <argument key="App\Controller\ContratAbonnementController::show" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\OptionAbonnementController::delete" type="service_closure" id=".service_locator.iX8bsHt"/>
+        <argument key="App\Controller\OptionAbonnementController::edit" type="service_closure" id=".service_locator.iX8bsHt"/>
+        <argument key="App\Controller\OptionAbonnementController::index" type="service_closure" id=".service_locator.yvzUGnK"/>
+        <argument key="App\Controller\OptionAbonnementController::show" type="service_closure" id=".service_locator.iX8bsHt"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.pwZ6MTM"/>
+        <argument key="App\Controller\SalleController::delete" type="service_closure" id=".service_locator.IjPBIR4"/>
+        <argument key="App\Controller\SalleController::edit" type="service_closure" id=".service_locator.IjPBIR4"/>
+        <argument key="App\Controller\SalleController::index" type="service_closure" id=".service_locator.9OSv7pt"/>
+        <argument key="App\Controller\SalleController::show" type="service_closure" id=".service_locator.IjPBIR4"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\TypeAbonnementController::delete" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\TypeAbonnementController::edit" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\TypeAbonnementController::index" type="service_closure" id=".service_locator.u1LsvD."/>
+        <argument key="App\Controller\TypeAbonnementController::show" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController::show" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\ActiviteController:delete" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ActiviteController:edit" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ActiviteController:index" type="service_closure" id=".service_locator.ieSzeIT"/>
+        <argument key="App\Controller\ActiviteController:show" type="service_closure" id=".service_locator.Hcjj_Ve"/>
+        <argument key="App\Controller\ArticleWebController:delete" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\ArticleWebController:edit" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\ArticleWebController:index" type="service_closure" id=".service_locator..aKg8d3"/>
+        <argument key="App\Controller\ArticleWebController:show" type="service_closure" id=".service_locator.FfCFYTE"/>
+        <argument key="App\Controller\CoachController:delete" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\CoachController:edit" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\CoachController:index" type="service_closure" id=".service_locator.xrxb5fQ"/>
+        <argument key="App\Controller\CoachController:show" type="service_closure" id=".service_locator.ci3a_Hu"/>
+        <argument key="App\Controller\ConceptController:delete" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ConceptController:edit" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ConceptController:index" type="service_closure" id=".service_locator.mNtrznK"/>
+        <argument key="App\Controller\ConceptController:show" type="service_closure" id=".service_locator.y80EHXf"/>
+        <argument key="App\Controller\ContratAbonnementController:delete" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\ContratAbonnementController:edit" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\ContratAbonnementController:index" type="service_closure" id=".service_locator.8eXzxEn"/>
+        <argument key="App\Controller\ContratAbonnementController:show" type="service_closure" id=".service_locator.YtRgIux"/>
+        <argument key="App\Controller\OptionAbonnementController:delete" type="service_closure" id=".service_locator.iX8bsHt"/>
+        <argument key="App\Controller\OptionAbonnementController:edit" type="service_closure" id=".service_locator.iX8bsHt"/>
+        <argument key="App\Controller\OptionAbonnementController:index" type="service_closure" id=".service_locator.yvzUGnK"/>
+        <argument key="App\Controller\OptionAbonnementController:show" type="service_closure" id=".service_locator.iX8bsHt"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.pwZ6MTM"/>
+        <argument key="App\Controller\SalleController:delete" type="service_closure" id=".service_locator.IjPBIR4"/>
+        <argument key="App\Controller\SalleController:edit" type="service_closure" id=".service_locator.IjPBIR4"/>
+        <argument key="App\Controller\SalleController:index" type="service_closure" id=".service_locator.9OSv7pt"/>
+        <argument key="App\Controller\SalleController:show" type="service_closure" id=".service_locator.IjPBIR4"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\TypeAbonnementController:delete" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\TypeAbonnementController:edit" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\TypeAbonnementController:index" type="service_closure" id=".service_locator.u1LsvD."/>
+        <argument key="App\Controller\TypeAbonnementController:show" type="service_closure" id=".service_locator.PpBxCLD"/>
+        <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController:show" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service_closure" id=".service_locator.KfwZsne"/>
@@ -6052,10 +6376,19 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.yj07qm_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YZlPrJT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ActiviteType" type="service_closure" id="App\Form\ActiviteType"/>
+        <argument key="App\Form\ArticleWebType" type="service_closure" id="App\Form\ArticleWebType"/>
+        <argument key="App\Form\CoachType" type="service_closure" id="App\Form\CoachType"/>
+        <argument key="App\Form\ConceptType" type="service_closure" id="App\Form\ConceptType"/>
+        <argument key="App\Form\ContratAbonnementType" type="service_closure" id="App\Form\ContratAbonnementType"/>
+        <argument key="App\Form\OptionAbonnementType" type="service_closure" id="App\Form\OptionAbonnementType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
+        <argument key="App\Form\SalleType" type="service_closure" id="App\Form\SalleType"/>
+        <argument key="App\Form\TypeAbonnementType" type="service_closure" id="App\Form\TypeAbonnementType"/>
+        <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -6327,15 +6660,69 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\ActiviteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ActiviteController"/>
+      <argument>App\Controller\ActiviteController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\ArticleWebController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ArticleWebController"/>
+      <argument>App\Controller\ArticleWebController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\CoachController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoachController"/>
+      <argument>App\Controller\CoachController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\ConceptController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ConceptController"/>
+      <argument>App\Controller\ConceptController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\ContratAbonnementController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ContratAbonnementController"/>
+      <argument>App\Controller\ContratAbonnementController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\OptionAbonnementController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\OptionAbonnementController"/>
+      <argument>App\Controller\OptionAbonnementController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
       <argument>App\Controller\RegistrationController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\SalleController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SalleController"/>
+      <argument>App\Controller\SalleController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\TypeAbonnementController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\TypeAbonnementController"/>
+      <argument>App\Controller\TypeAbonnementController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController"/>
+      <argument>App\Controller\UserController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
@@ -6401,6 +6788,15 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.Hcjj_Ve.App\Entity\Activite" class="App\Entity\Activite"/>
+    <service id=".errored..service_locator.FfCFYTE.App\Entity\ArticleWeb" class="App\Entity\ArticleWeb"/>
+    <service id=".errored..service_locator.ci3a_Hu.App\Entity\Coach" class="App\Entity\Coach"/>
+    <service id=".errored..service_locator.y80EHXf.App\Entity\Concept" class="App\Entity\Concept"/>
+    <service id=".errored..service_locator.YtRgIux.App\Entity\ContratAbonnement" class="App\Entity\ContratAbonnement"/>
+    <service id=".errored..service_locator.iX8bsHt.App\Entity\OptionAbonnement" class="App\Entity\OptionAbonnement"/>
+    <service id=".errored..service_locator.IjPBIR4.App\Entity\Salle" class="App\Entity\Salle"/>
+    <service id=".errored..service_locator.PpBxCLD.App\Entity\TypeAbonnement" class="App\Entity\TypeAbonnement"/>
+    <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
     <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6508,12 +6904,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.glbFuN."/>
+      <argument type="service" id=".service_locator.XKPmtnW"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.glbFuN."/>
+      <argument type="service" id=".service_locator.XKPmtnW"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7366,7 +7762,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.glbFuN."/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XKPmtnW"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7387,8 +7783,26 @@
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.uuYKR5O" alias=".service_locator.ieSzeIT"/>
+    <service id=".service_locator.VaZnC4y" alias=".service_locator.Hcjj_Ve"/>
+    <service id=".service_locator.emSY1K5" alias=".service_locator..aKg8d3"/>
+    <service id=".service_locator.JXiTI46" alias=".service_locator.FfCFYTE"/>
+    <service id=".service_locator.N.3._yE" alias=".service_locator.xrxb5fQ"/>
+    <service id=".service_locator.6da7wV4" alias=".service_locator.ci3a_Hu"/>
+    <service id=".service_locator..3qvGRi" alias=".service_locator.mNtrznK"/>
+    <service id=".service_locator.p8PdW8_" alias=".service_locator.y80EHXf"/>
+    <service id=".service_locator.BRn6zKE" alias=".service_locator.8eXzxEn"/>
+    <service id=".service_locator.t40TwYy" alias=".service_locator.YtRgIux"/>
+    <service id=".service_locator.HbX.o6v" alias=".service_locator.yvzUGnK"/>
+    <service id=".service_locator.KYdvojH" alias=".service_locator.iX8bsHt"/>
     <service id=".service_locator.F2VpVm6" alias=".service_locator.pwZ6MTM"/>
+    <service id=".service_locator.CiLXhNu" alias=".service_locator.9OSv7pt"/>
+    <service id=".service_locator.Z_G5Hzl" alias=".service_locator.IjPBIR4"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
+    <service id=".service_locator.E9J2ruy" alias=".service_locator.u1LsvD."/>
+    <service id=".service_locator.rn5w9Px" alias=".service_locator.PpBxCLD"/>
+    <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
+    <service id=".service_locator.NFoOWn0" alias=".service_locator.ch4Jgvl"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
     <service id=".service_locator.NK827YO" alias=".service_locator.W9y3dzm"/>
     <service id="validator" alias="debug.validator" public="true"/>

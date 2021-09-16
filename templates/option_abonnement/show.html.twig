@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OptionAbonnement{% endblock %}
+
+{% block body %}
+    <h1>OptionAbonnement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ option_abonnement.id }}</td>
+            </tr>
+            <tr>
+                <th>NomOption</th>
+                <td>{{ option_abonnement.nomOption }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ option_abonnement.tarif }}</td>
+            </tr>
+            <tr>
+                <th>TypeAcces</th>
+                <td>{{ option_abonnement.typeAcces }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ option_abonnement.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('option_abonnement_index') }}">back to list</a>
+
+    <a href="{{ path('option_abonnement_edit', {'id': option_abonnement.id}) }}">edit</a>
+
+    {{ include('option_abonnement/_delete_form.html.twig') }}
+{% endblock %}

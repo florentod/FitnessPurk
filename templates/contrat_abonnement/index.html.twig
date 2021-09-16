@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ContratAbonnement index{% endblock %}
+
+{% block body %}
+    <h1>ContratAbonnement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ValidationInscription</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contrat_abonnement in contrat_abonnements %}
+            <tr>
+                <td>{{ contrat_abonnement.id }}</td>
+                <td>{{ contrat_abonnement.validationInscription ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('contrat_abonnement_show', {'id': contrat_abonnement.id}) }}">show</a>
+                    <a href="{{ path('contrat_abonnement_edit', {'id': contrat_abonnement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrat_abonnement_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ContratAbonnement{% endblock %}
+
+{% block body %}
+    <h1>ContratAbonnement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrat_abonnement.id }}</td>
+            </tr>
+            <tr>
+                <th>ValidationInscription</th>
+                <td>{{ contrat_abonnement.validationInscription ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrat_abonnement_index') }}">back to list</a>
+
+    <a href="{{ path('contrat_abonnement_edit', {'id': contrat_abonnement.id}) }}">edit</a>
+
+    {{ include('contrat_abonnement/_delete_form.html.twig') }}
+{% endblock %}

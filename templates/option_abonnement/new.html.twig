@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New OptionAbonnement{% endblock %}
+
+{% block body %}
+    <h1>Create new OptionAbonnement</h1>
+
+    {{ include('option_abonnement/_form.html.twig') }}
+
+    <a href="{{ path('option_abonnement_index') }}">back to list</a>
+{% endblock %}

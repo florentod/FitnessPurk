@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeAbonnement{% endblock %}
+
+{% block body %}
+    <h1>TypeAbonnement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_abonnement.id }}</td>
+            </tr>
+            <tr>
+                <th>NomAbonnement</th>
+                <td>{{ type_abonnement.nomAbonnement }}</td>
+            </tr>
+            <tr>
+                <th>PrixPremMois</th>
+                <td>{{ type_abonnement.prixPremMois }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ type_abonnement.prix }}</td>
+            </tr>
+            <tr>
+                <th>FraisInscription</th>
+                <td>{{ type_abonnement.fraisInscription }}</td>
+            </tr>
+            <tr>
+                <th>Engagemennt</th>
+                <td>{{ type_abonnement.engagemennt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_abonnement_index') }}">back to list</a>
+
+    <a href="{{ path('type_abonnement_edit', {'id': type_abonnement.id}) }}">edit</a>
+
+    {{ include('type_abonnement/_delete_form.html.twig') }}
+{% endblock %}

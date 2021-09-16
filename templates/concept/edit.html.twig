@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Concept{% endblock %}
+
+{% block body %}
+    <h1>Edit Concept</h1>
+
+    {{ include('concept/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('concept_index') }}">back to list</a>
+
+    {{ include('concept/_delete_form.html.twig') }}
+{% endblock %}

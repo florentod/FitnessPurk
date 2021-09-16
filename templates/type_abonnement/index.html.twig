@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeAbonnement index{% endblock %}
+
+{% block body %}
+    <h1>TypeAbonnement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomAbonnement</th>
+                <th>PrixPremMois</th>
+                <th>Prix</th>
+                <th>FraisInscription</th>
+                <th>Engagemennt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_abonnement in type_abonnements %}
+            <tr>
+                <td>{{ type_abonnement.id }}</td>
+                <td>{{ type_abonnement.nomAbonnement }}</td>
+                <td>{{ type_abonnement.prixPremMois }}</td>
+                <td>{{ type_abonnement.prix }}</td>
+                <td>{{ type_abonnement.fraisInscription }}</td>
+                <td>{{ type_abonnement.engagemennt }}</td>
+                <td>
+                    <a href="{{ path('type_abonnement_show', {'id': type_abonnement.id}) }}">show</a>
+                    <a href="{{ path('type_abonnement_edit', {'id': type_abonnement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_abonnement_new') }}">Create new</a>
+{% endblock %}
